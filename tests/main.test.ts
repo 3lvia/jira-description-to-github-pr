@@ -26,7 +26,7 @@ describe('Main()', () => {
     ;(getInputs as any).mockImplementation(() => MOCK_GITHUB_ACTION_INPUT)
 
     const scope = nock(MOCK_GITHUB_ACTION_INPUT.JIRA_BASE_URL)
-      .get('/rest/api/2/issue/' + MOCK_GITHUB_ACTION_INPUT.JIRA_TICKET_ID)
+      .get('/rest/api/' + MOCK_GITHUB_ACTION_INPUT.JIRA_API_VERSION + '/issue/' + MOCK_GITHUB_ACTION_INPUT.JIRA_TICKET_ID)
       .reply(200, MOCK_JIRA_ISSUE)
 
     await run()

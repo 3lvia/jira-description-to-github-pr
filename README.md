@@ -31,6 +31,7 @@ jobs:
           jira-token: ${{ secrets.JIRA_API_TOKEN }}
           jira-ticket-id: ${{ env.JIRA_ID }}
           jira-base-url: https://testcompany.atlassian.net
+          jira-api-version: 3
 ```
 
 ## Inputs
@@ -41,9 +42,10 @@ jobs:
 | `jira-token`     | Jira API token, see [Atlassian Docs](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) | `username:token`                  | Yes      |
 | `jira-ticket-id` | Jira ticket ID                                                                                                                           | `TKP-123`                         | Yes      |
 | `jira-base-url`  | Organisation's sub-domain for Jira.                                                                                                      | https://testcompany.atlassian.net | Yes      |
+| `jira-api-version`  | api version to use                                                                                                        | 3 | Yes      |
 
 ## Markdown Compatability
 
-This build makes use of Jira REST API V2, which means that the Markdown formatting in Jira and GitHub pull requests may
+This action uses Jira REST API, which means that the Markdown formatting in Jira and GitHub pull requests may
 not perfectly align. While certain advanced formatting features may not translate precisely, basic elements like plain
 text, bullet points, and paragraphs remain consistent between the two platforms.

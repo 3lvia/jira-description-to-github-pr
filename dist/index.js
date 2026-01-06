@@ -29294,11 +29294,13 @@ const getInputs = () => {
     const GITHUB_TOKEN = core.getInput('github-token', { required: true });
     const JIRA_TOKEN = core.getInput('jira-token', { required: true });
     const JIRA_TICKET_ID = core.getInput('jira-ticket-id', { required: true });
+    const JIRA_API_VERSION = core.getInput('jira-api-version', { required: true });
     const JIRA_BASE_URL = core.getInput('jira-base-url', { required: true });
     return {
         GITHUB_TOKEN,
         JIRA_TOKEN,
         JIRA_TICKET_ID,
+        JIRA_API_VERSION,
         JIRA_BASE_URL: JIRA_BASE_URL.endsWith('/') ? JIRA_BASE_URL.replace(/\/$/, '') : JIRA_BASE_URL
     };
 };
@@ -29413,8 +29415,8 @@ class JiraConnector {
     ticket_url;
     jira_issue = {};
     constructor() {
-        const { JIRA_TOKEN, JIRA_TICKET_ID, JIRA_BASE_URL } = (0, action_inputs_1.getInputs)();
-        this.api_url = `${JIRA_BASE_URL}/rest/api/2/issue/${JIRA_TICKET_ID}`;
+        const { JIRA_TOKEN, JIRA_TICKET_ID, JIRA_BASE_URL, JIRA_API_VERSION } = (0, action_inputs_1.getInputs)();
+        this.api_url = `${JIRA_BASE_URL}/rest/api/${JIRA_API_VERSION}/issue/${JIRA_TICKET_ID}`;
         this.token = Buffer.from(JIRA_TOKEN).toString('base64');
         this.ticket_id = JIRA_TICKET_ID;
         this.ticket_url = `${JIRA_BASE_URL}/browse/${JIRA_TICKET_ID}`;
