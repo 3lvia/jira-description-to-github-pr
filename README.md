@@ -1,6 +1,6 @@
 # jira-description-to-github-pr
-
-- Forked from [ks-keshava-rao/Jira-description](https://github.com/ks-keshava-rao/Jira-description) and converted to
+- Forked from [johnforeland/jira-description-to-github-pr](https://github.com/johnforeland/jira-description-to-github-pr)
+- [ks-keshava-rao/Jira-description](https://github.com/ks-keshava-rao/Jira-description), converted to
   typescript
 - With inspiration and code sampling from
   [cakeinpanic/jira-description-action](https://github.com/cakeinpanic/jira-description-action)
