@@ -91,6 +91,7 @@ export interface IActionInputs {
   GITHUB_TOKEN: string
   JIRA_TICKET_ID: string
   JIRA_BASE_URL: string
+  JIRA_API_VERSION: string
 }
 
 export interface IGithubData {

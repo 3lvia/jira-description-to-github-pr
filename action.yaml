@@ -1,9 +1,9 @@
 name: 'jira-description-to-github-pr'
-author: 'johnforeland'
-description: 'Copy Jira descriptions to a Pull Request description'
+author: 'esdagh'
+description: 'Copies a Jira description to a Pull Request description'
 branding:
   icon: "check-circle"
-  color: "purple"
+  color: "green"
 inputs:
   github-token:
     description: "Github access token"
@@ -13,6 +13,9 @@ inputs:
     required: true
   jira-base-url: 
     description: "organization's jira url"
+    required: true
+  jira-api-version: 
+    description: "api version to use, e.g. '2' or '3'"
     required: true
   jira-token:
     description: "Jira token"
