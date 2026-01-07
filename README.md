@@ -36,13 +36,13 @@ jobs:
 
 ## Inputs
 
-| Name             | Description                                                                                                                              | Example                           | Required |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- |
-| `github-token`   | GitHub Token needed to update Pull Requests                                                                                              | ${{ secrets.GITHUB_TOKEN }}       | Yes      |
-| `jira-token`     | Jira API token, see [Atlassian Docs](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) | `username token`                  | Yes      |
-| `jira-ticket-id` | Jira ticket ID                                                                                                                           | `TKP-123`                         | Yes      |
-| `jira-base-url`  | Organisation's sub-domain for Jira.                                                                                                      | https://testcompany.atlassian.net | Yes      |
-| `jira-api-version`  | api version to use                                                                                                        | 3 | Yes      |
+| Name              | Description                                                                                                                              | Example                           | Required |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- |
+| `github-token`    | GitHub Token needed to update Pull Requests                                                                                              | ${{ secrets.GITHUB_TOKEN }}       | Yes      |
+| `jira-token`      | Jira API token, see [Atlassian Docs](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) | `username:token`                  | Yes      |
+| `jira-ticket-id`  | Jira ticket ID                                                                                                                           | `TKP-123`                         | Yes      |
+| `jira-base-url`   | Organisation's sub-domain for Jira.                                                                                                      | https://testcompany.atlassian.net | Yes      |
+| `jira-api-version`| api version to use                                                                                                                       | 3                                 | Yes      |
 
 ## Markdown Compatability
 
