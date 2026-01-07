@@ -11,7 +11,7 @@ export const getInputs = (): IActionInputs => {
     GITHUB_TOKEN,
     JIRA_TOKEN,
     JIRA_TICKET_ID,
-    JIRA_API_VERSION,
     JIRA_BASE_URL: JIRA_BASE_URL.endsWith('/') ? JIRA_BASE_URL.replace(/\/$/, '') : JIRA_BASE_URL,
+    JIRA_API_VERSION,
   }
 }

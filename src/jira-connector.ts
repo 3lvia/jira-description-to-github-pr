@@ -34,7 +34,7 @@ export class JiraConnector {
       return issue
     } else {
       core.setFailed(
-        `Failed to fetch response from Jira API. HTTP Error: ${response.status}. Error Message: ${response.statusText}`
+        `Failed to fetch response from Jira API at ${this.api_url}. HTTP Error: ${response.status}. Error Message: ${response.statusText}`
       )
       process.exit(1)
     }
