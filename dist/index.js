@@ -29300,8 +29300,8 @@ const getInputs = () => {
         GITHUB_TOKEN,
         JIRA_TOKEN,
         JIRA_TICKET_ID,
-        JIRA_API_VERSION,
-        JIRA_BASE_URL: JIRA_BASE_URL.endsWith('/') ? JIRA_BASE_URL.replace(/\/$/, '') : JIRA_BASE_URL
+        JIRA_BASE_URL: JIRA_BASE_URL.endsWith('/') ? JIRA_BASE_URL.replace(/\/$/, '') : JIRA_BASE_URL,
+        JIRA_API_VERSION
     };
 };
 exports.getInputs = getInputs;
@@ -29436,7 +29436,7 @@ class JiraConnector {
             return issue;
         }
         else {
-            core.setFailed(`Failed to fetch response from Jira API. HTTP Error: ${response.status}. Error Message: ${response.statusText}`);
+            core.setFailed(`Failed to fetch response from Jira API at ${this.api_url}. HTTP Error: ${response.status}. Error Message: ${response.statusText}`);
             process.exit(1);
         }
     }
