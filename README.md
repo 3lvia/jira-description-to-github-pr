@@ -25,7 +25,7 @@ jobs:
         run: echo "JIRA_ID=$(echo '${{ github.head_ref }}' | grep -Po '\w*-\d\w+')" >> $GITHUB_ENV #
 
       - name: Update PR description
-        uses: johnforeland/jira-description-to-github-pr@v1
+        uses: 3lvia/jira-description-to-github-pr@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           jira-token: ${{ secrets.JIRA_API_TOKEN }}
