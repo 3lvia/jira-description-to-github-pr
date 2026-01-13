@@ -4,17 +4,19 @@ import { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-methods/d
 import { getInputs } from './action-inputs'
 import { JIRA } from './types'
 import { IGithubData, PullRequestParams } from './types'
-import { isRunningTest, jiraToMarkdown } from './utils'
+import { isRunningTest, convertToMarkdown } from './utils'
 
 export class GithubConnector {
   githubData: IGithubData = {} as IGithubData
   octokit: InstanceType<typeof GitHub>
+  jira_api_version: string
   jira_issue!: JIRA.Issue
   jira_ticket_url!: string
   jira_ticket_id!: string
 
   constructor() {
-    const { GITHUB_TOKEN } = getInputs()
+    const { GITHUB_TOKEN, JIRA_API_VERSION } = getInputs()
+    this.jira_api_version = JIRA_API_VERSION
     this.octokit = getOctokit(GITHUB_TOKEN)
     this.githubData = this.getGithubData()
   }
@@ -40,7 +42,7 @@ export class GithubConnector {
   }
 
   get body() {
-    let description = jiraToMarkdown(this.jira_issue.fields.description)
+    let description = convertToMarkdown(this.jira_issue.fields.description, this.jira_api_version)
     return `## Jira\n\n${this.jira_issue.fields.summary} ([${this.jira_ticket_id}](${this.jira_ticket_url}))\n\n## Description\n\n${description}`
   }
 
