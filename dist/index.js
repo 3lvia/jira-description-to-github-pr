@@ -29647,7 +29647,7 @@ exports.convertToMarkdown = convertToMarkdown;
 exports.jiraToMarkdown = jiraToMarkdown;
 exports.adfToMarkdown = adfToMarkdown;
 const j2m = __nccwpck_require__(1825);
-const Parser = __nccwpck_require__(6188);
+const { Parser } = __nccwpck_require__(6188);
 function isRunningTest() {
     return process.env.JEST_WORKER_ID !== undefined;
 }

@@ -1,5 +1,5 @@
 const j2m = require('jira2md')
-const Parser = require('extended-markdown-adf-parser'); 
+const { Parser } = require('extended-markdown-adf-parser');
 
 export function isRunningTest() {
   return process.env.JEST_WORKER_ID !== undefined
