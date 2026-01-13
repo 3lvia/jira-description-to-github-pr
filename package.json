@@ -1,12 +1,13 @@
 {
   "name": "jira-description-to-github-pr",
   "version": "1.3.0",
-  "author": "johnforeland",
+  "author": "Eirik Skjeggestad Dale",
   "description": "Copy Jira descriptions to a Pull Request description",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^6.0.0",
     "@octokit/rest": "^20.0.1",
+    "extended-markdown-adf-parser": "^2.4.0",
     "jira2md": "^3.0.1",
     "markdown-to-txt": "^2.0.1"
   },
@@ -28,7 +29,7 @@
     "prettier": "^3.2.5",
     "prettier-eslint": "^16.3.0",
     "ts-jest": "^29.1.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20"
@@ -44,7 +45,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnforeland/jira-description-to-github-pr.git"
+    "url": "git+https://github.com/3lvia/jira-description-to-github-pr.git"
   },
   "scripts": {
     "all": "npm run format:write && npm run lint && npm run package",
