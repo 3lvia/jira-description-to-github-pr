@@ -4,7 +4,7 @@
   "author": "Eirik Skjeggestad Dale",
   "description": "Copy Jira descriptions to a Pull Request description",
   "dependencies": {
-    "@actions/core": "^1.10.0",
+    "@actions/core": "^3.0.0",
     "@actions/github": "^9.1.0",
     "@octokit/rest": "^22.0.1",
     "extended-markdown-adf-parser": "^2.4.0",
